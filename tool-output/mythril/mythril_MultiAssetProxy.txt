@@ -1,0 +1,209 @@
+$ myth -x --solc-args '--allow-paths ../,./,.' contracts/protocol/AssetProxy/MultiAssetProxy.sol
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 417
+Estimated Gas Usage: 885 - 1170
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:113
+
+add(assetDataOffset, 40)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 422
+Estimated Gas Usage: 897 - 1182
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:121
+
+add(assetDataOffset, 72)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 427
+Estimated Gas Usage: 909 - 1194
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:130
+
+add(amountsOffset, 72)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 429
+Estimated Gas Usage: 915 - 1200
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:130
+
+add(assetDataOffset, add(amountsOffset, 72))
+
+--------------------
+
+==== Integer Underflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 433
+Estimated Gas Usage: 924 - 1209
+The subtraction can result in an integer underflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:133
+
+sub(amountsContentsStart, 32)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 438
+Estimated Gas Usage: 936 - 1221
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:142
+
+add(nestedAssetDataOffset, 72)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 440
+Estimated Gas Usage: 942 - 1227
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:142
+
+add(assetDataOffset, add(nestedAssetDataOffset, 72))
+
+--------------------
+
+==== Integer Underflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 444
+Estimated Gas Usage: 951 - 1236
+The subtraction can result in an integer underflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:145
+
+sub(nestedAssetDataContentsStart, 32)
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: fallback
+PC address: 585
+Estimated Gas Usage: 1021 - 3705
+This binary multiply operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/AssetProxy/MultiAssetProxy.sol:171
+
+mul(amountsLen, 32)
+
+--------------------
+
+==== Exception state ====
+SWC ID: 110
+Type: Informational
+Contract: MultiAssetProxy
+Function name: authorities(uint256)
+PC address: 3022
+Estimated Gas Usage: 658 - 753
+A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. Note that explicit `assert()` should only be used to check invariants. Use `require()` for regular input checking.
+--------------------
+In file: contracts/protocol/AssetProxy/MixinAuthorizable.sol:39
+
+address[] public authorities
+
+--------------------
+
+==== Message call to external contract ====
+SWC ID: 107
+Type: Warning
+Contract: MultiAssetProxy
+Function name: registerAssetProxy(address)
+PC address: 5601
+Estimated Gas Usage: 1687 - 2393
+This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.
+--------------------
+In file: contracts/protocol/Exchange/MixinAssetProxyDispatcher.sol:43
+
+assetProxyContract.getProxyId()
+
+--------------------
+
+==== Integer Overflow ====
+SWC ID: 101
+Type: Warning
+Contract: MultiAssetProxy
+Function name: registerAssetProxy(address)
+PC address: 5642
+Estimated Gas Usage: 2455 - 37254
+This binary add operation can result in integer overflow.
+
+--------------------
+In file: contracts/protocol/Exchange/MixinAssetProxyDispatcher.sol:43
+
+assetProxyContract.getProxyId()
+
+--------------------
+
+==== State change after external call ====
+SWC ID: 107
+Type: Warning
+Contract: MultiAssetProxy
+Function name: registerAssetProxy(address)
+PC address: 6082
+Estimated Gas Usage: 1687 - 2393
+The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.
+--------------------
+In file: contracts/protocol/Exchange/MixinAssetProxyDispatcher.sol:51
+
+assetProxies[assetProxyId] = assetProxyContract
+
+--------------------
+
+
+
+

@@ -1,0 +1,7 @@
+$ solium --no-soliumignore --no-soliumrc --plugin security -f contracts/protocol/AssetProxy/MultiAssetProxy.sol
+
+contracts/protocol/AssetProxy/MultiAssetProxy.sol
+  36:8    error    Avoid using Inline Assembly.    security/no-inline-assembly
+
+✖ 1 error found.
+
