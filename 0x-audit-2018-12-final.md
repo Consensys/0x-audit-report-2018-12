@@ -55,8 +55,8 @@ ________________
 
 | | <img height="30px"  src="static-content/minor.png"/> | <img height="30px" src="static-content/medium.png"/>  | <img height="30px" src="static-content/major.png"/> | <img height="30px" src="static-content/critical.png"/> | 
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
-| <img height="30px"  src="static-content/open.png"/> | **1**  |  **1**  | **0**  | **0** |
-| <img height="30px"  src="static-content/closed.png"/> | **0**  |  **0**  | **0**  | **0** |
+| <img height="30px"  src="static-content/open.png"/> | **0**  |  **0**  | **0**  | **0** |
+| <img height="30px"  src="static-content/closed.png"/> | **1**  |  **1**  | **0**  | **0** |
 
 
 ________________
@@ -107,8 +107,8 @@ The following table contains all the issues discovered during the audit. The iss
 
 | Chapter | Issue Title  | Issue Status | Severity |
 | ------------- | ------------- | ------------- | ------------- |
- | 3.1 | [Inconsistent parameter validation](#31-inconsistent-parameter-validation) | <img height="30px" src="static-content/open.png"/>| <img height="30px" src="static-content/medium.png"/> | 
- | 3.2 | [Multiplication overflow check doesn't handle zero](#32-multiplication-overflow-check-doesn't-handle-zero) | <img height="30px" src="static-content/open.png"/>| <img height="30px" src="static-content/minor.png"/> | 
+ | 3.1 | [Inconsistent parameter validation](#31-inconsistent-parameter-validation) | <img height="30px" src="static-content/closed.png"/>| <img height="30px" src="static-content/medium.png"/> | 
+ | 3.2 | [Multiplication overflow check doesn't handle zero](#32-multiplication-overflow-check-doesn't-handle-zero) | <img height="30px" src="static-content/closed.png"/>| <img height="30px" src="static-content/minor.png"/> | 
 
 
 
@@ -118,7 +118,9 @@ The following table contains all the issues discovered during the audit. The iss
 
 | Severity  | Status | Link | Remediation Comment |
 | ------------- | ------------- | ------------- | ------------- |
-| <img height="30px" src="static-content/medium.png"/> |  <img height="30px" src="static-content/open.png"/> | [ issues/23](https://github.com/ConsenSys/0x-audit-2018-12/issues/23)| The issue is currently under review |
+| <img height="30px" src="static-content/medium.png"/> |  <img height="30px" src="static-content/closed.png"/> | [ issues/23](https://github.com/ConsenSys/0x-audit-2018-12/issues/23)|  this issue was closed as WONTFIX per the 0xProject teams reasoning: 
+
+> We decided to leave the single overflow check in for this reason: someone can create an order where fully filling the order would cause an overflow, but it would still be safe to partially fill the order. If we removed the overflow check in this case, the order would be potentially deceptive and unsafe. |
 
 
 #### Description
@@ -184,7 +186,7 @@ If such validation is _not_ to be added, the inconsistency can be resolved by re
 
 | Severity  | Status | Link | Remediation Comment |
 | ------------- | ------------- | ------------- | ------------- |
-| <img height="30px" src="static-content/minor.png"/> |  <img height="30px" src="static-content/open.png"/> | [ issues/24](https://github.com/ConsenSys/0x-audit-2018-12/issues/24)| The issue is currently under review |
+| <img height="30px" src="static-content/minor.png"/> |  <img height="30px" src="static-content/closed.png"/> | [ issues/24](https://github.com/ConsenSys/0x-audit-2018-12/issues/24)|  This issue was closed in [pull/1455](https://github.com/0xProject/0x-monorepo/pull/1455/files).  |
 
 
 #### Description
